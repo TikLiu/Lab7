@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QUIZLANGModelStoreContainer" CdmEntityContainer="QUIZLANGEntities">
+    <EntitySetMapping Name="Directory">
+      <EntityTypeMapping TypeName="QUIZLANGModel.Directory">
+        <MappingFragment StoreEntitySet="Directory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Language1" ColumnName="Language1" />
+          <ScalarProperty Name="Language2" ColumnName="Language2" />
+          <ScalarProperty Name="WordsInLanguage1" ColumnName="WordsInLanguage1" />
+          <ScalarProperty Name="WordsInLanguage2" ColumnName="WordsInLanguage2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History">
+      <EntityTypeMapping TypeName="QUIZLANGModel.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="TestHistoryID" ColumnName="TestHistoryID" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="nativeLanName" ColumnName="nativeLanName" />
+          <ScalarProperty Name="learntLanName" ColumnName="learntLanName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Language">
+      <EntityTypeMapping TypeName="QUIZLANGModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question">
+      <EntityTypeMapping TypeName="QUIZLANGModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+          <ScalarProperty Name="DirectoryID" ColumnName="DirectoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestTemp">
+      <EntityTypeMapping TypeName="QUIZLANGModel.TestTemp">
+        <MappingFragment StoreEntitySet="TestTemp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="QuestionWord" ColumnName="QuestionWord" />
+          <ScalarProperty Name="AnswerWord" ColumnName="AnswerWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="QUIZLANGModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nativeLanguageID" ColumnName="nativeLanguageID" />
+          <ScalarProperty Name="learntLanguageID" ColumnName="learntLanguageID" />
+          <ScalarProperty Name="teacherID" ColumnName="teacherID" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

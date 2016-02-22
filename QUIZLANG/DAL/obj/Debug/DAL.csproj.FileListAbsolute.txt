@@ -1,0 +1,10 @@
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\DAL.dll.config
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\DAL.dll
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\DAL.pdb
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\EntityFramework.dll
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\EntityFramework.xml
+D:\MyWork\Lab7\QUIZLANG\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyWork\Lab7\QUIZLANG\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MyWork\Lab7\QUIZLANG\DAL\obj\Debug\DAL.dll
+D:\MyWork\Lab7\QUIZLANG\DAL\obj\Debug\DAL.pdb
