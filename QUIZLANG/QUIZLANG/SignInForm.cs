@@ -50,6 +50,12 @@ namespace QUIZLANG
                 return;
             }
 
+            var users = entites.UserInfo.Where(a => a.username == username);
+            if (users != null && users.Count() > 0)
+            {
+                MessageBox.Show("User already exist.", "QUIZLANG System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             UserInfo user = new UserInfo()
             {
