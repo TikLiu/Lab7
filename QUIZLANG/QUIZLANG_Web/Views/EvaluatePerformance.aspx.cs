@@ -40,14 +40,14 @@ namespace QUIZLANG_Web.Views
             string grade = dropDownListGrade.SelectedValue.ToString();
             string studentID = dropDownListStudent.SelectedValue.ToString();
 
-            UserInfo userInfo = new UserInfo()
+          
+            var user = entities.UserInfo.Where(a=>a.userID.ToString() == studentID).FirstOrDefault();
+            if (user != null)
             {
-                userID = int.Parse(studentID),
-                grade = int.Parse(grade)
-            };
-
-            entities.Entry(userInfo).State = System.Data.Entity.EntityState.Modified;
-            entities.SaveChanges();
+                user.grade = int.Parse(grade);
+                entities.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                entities.SaveChanges();
+            }
 
         }
 
@@ -99,6 +99,12 @@ namespace QUIZLANG_Web.Views
             else
             {
                 gridViewStudentDetail.DataSource = null;
+            }
+
+            var user = entities.UserInfo.Where(a => a.userID == userid).FirstOrDefault();
+            if (user != null)
+            {
+                dropDownListGrade.SelectedValue = user.grade.ToString();
             }
         }
     }
