@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QUIZLANGModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Directory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Language2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WordsInLanguage1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WordsInLanguage2" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="TestHistoryID" />
+          </Key>
+          <Property Name="TestHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="result" Type="int" Nullable="false" />
+          <Property Name="nativeLanName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="learntLanName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuizID" Type="int" Nullable="false" />
+          <Property Name="DirectoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nativeLanguageID" Type="int" Nullable="false" />
+          <Property Name="learntLanguageID" Type="int" Nullable="false" />
+          <Property Name="teacherID" Type="int" Nullable="false" />
+          <Property Name="grade" Type="int" />
+        </EntityType>
+        <EntityContainer Name="QUIZLANGModel1StoreContainer">
+          <EntitySet Name="Directory" EntityType="Self.Directory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUIZLANGModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Directory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Language2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WordsInLanguage1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WordsInLanguage2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="TestHistoryID" />
+          </Key>
+          <Property Name="TestHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <Property Name="result" Type="Int32" Nullable="false" />
+          <Property Name="nativeLanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="learntLanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuizID" Type="Int32" Nullable="false" />
+          <Property Name="DirectoryID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nativeLanguageID" Type="Int32" Nullable="false" />
+          <Property Name="learntLanguageID" Type="Int32" Nullable="false" />
+          <Property Name="teacherID" Type="Int32" Nullable="false" />
+          <Property Name="grade" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="myentites" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Directory" EntityType="Self.Directory" />
+          <EntitySet Name="History" EntityType="Self.History" />
+          <EntitySet Name="Language" EntityType="Self.Language" />
+          <EntitySet Name="Question" EntityType="Self.Question" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUIZLANGModel1StoreContainer" CdmEntityContainer="myentites">
+          <EntitySetMapping Name="Directory">
+            <EntityTypeMapping TypeName="QUIZLANGModel1.Directory">
+              <MappingFragment StoreEntitySet="Directory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Language1" ColumnName="Language1" />
+                <ScalarProperty Name="Language2" ColumnName="Language2" />
+                <ScalarProperty Name="WordsInLanguage1" ColumnName="WordsInLanguage1" />
+                <ScalarProperty Name="WordsInLanguage2" ColumnName="WordsInLanguage2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History">
+            <EntityTypeMapping TypeName="QUIZLANGModel1.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="TestHistoryID" ColumnName="TestHistoryID" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="nativeLanName" ColumnName="nativeLanName" />
+                <ScalarProperty Name="learntLanName" ColumnName="learntLanName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Language">
+            <EntityTypeMapping TypeName="QUIZLANGModel1.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question">
+            <EntityTypeMapping TypeName="QUIZLANGModel1.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+                <ScalarProperty Name="DirectoryID" ColumnName="DirectoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="QUIZLANGModel1.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="nativeLanguageID" ColumnName="nativeLanguageID" />
+                <ScalarProperty Name="learntLanguageID" ColumnName="learntLanguageID" />
+                <ScalarProperty Name="teacherID" ColumnName="teacherID" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
